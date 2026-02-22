@@ -27,8 +27,11 @@ jobs:
           IMAGE=${{ secrets.DOCKER_USERNAME }}/platform-demo
           TAG=${{ github.sha }}
 
+          echo "Building image with tag $TAG"
+
           docker build -t $IMAGE:$TAG .
           docker push $IMAGE:$TAG
-          
+
+          echo "Tagging as latest"
           docker tag $IMAGE:$TAG $IMAGE:latest
           docker push $IMAGE:latest
