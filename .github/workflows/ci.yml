@@ -24,5 +24,11 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/platform-demo:latest .
-          docker push ${{ secrets.DOCKER_USERNAME }}/platform-demo:latest
+          IMAGE=${{ secrets.DOCKER_USERNAME }}/platform-demo
+          TAG=${{ github.sha }}
+
+          docker build -t $IMAGE:$TAG .
+          docker push $IMAGE:$TAG
+          
+          docker tag $IMAGE:$TAG $IMAGE:latest
+          docker push $IMAGE:latest
