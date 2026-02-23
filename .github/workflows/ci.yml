@@ -4,7 +4,11 @@ on:
   push:
     branches:
       - main
-
+    paths:
+      - 'Dockerfile'
+      - 'app.py'
+      - 'requirements.txt'
+      
 jobs:
   build:
     runs-on: ubuntu-latest
