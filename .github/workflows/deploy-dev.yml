@@ -1,0 +1,21 @@
+name: Deploy to Dev
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: "Docker image tag to deploy"
+        required: true
+        default: "latest"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Simulate Dev Deployment
+        run: |
+          echo "Deploying image 10mey/platform-demo:${{ github.event.inputs.image_tag }} to DEV environment"
