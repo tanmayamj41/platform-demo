@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: platform-demo
-          image: 10mey/platform-demo:IMAGE_TAG_PLACEHOLDER
+          image: 10mey/platform-demo:eec52e4d144951b54c503bb9dff2b68427aa62fe
           ports:
             - containerPort: 5000
