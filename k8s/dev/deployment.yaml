@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: platform-demo
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: platform-demo
+  template:
+    metadata:
+      labels:
+        app: platform-demo
+    spec:
+      containers:
+        - name: platform-demo
+          image: 10mey/platform-demo:IMAGE_TAG_PLACEHOLDER
+          ports:
+            - containerPort: 5000
