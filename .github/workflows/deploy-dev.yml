@@ -20,7 +20,8 @@ jobs:
 
       - name: Update image tag in dev deployment
         run: |
-          sed -i "s/IMAGE_TAG_PLACEHOLDER/${{ github.event.inputs.image_tag }}/g" k8s/dev/deployment.yaml
+          IMAGE_TAG=${{ github.event.inputs.image_tag }}
+          sed -i "s|image: 10mey/platform-demo:.*|image: 10mey/platform-demo:$IMAGE_TAG|g" k8s/dev/deployment.yaml
 
       - name: Commit updated deployment file
         run: |
