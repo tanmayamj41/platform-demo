@@ -18,3 +18,8 @@ spec:
           image: 10mey/platform-demo:eec52e4d144951b54c503bb9dff2b68427aa62fe
           ports:
             - containerPort: 5000
+          env:
+            - name: ENVIRONMENT
+              value: "dev"
+            - name: LOG_LEVEL
+              value: "DEBUG"
