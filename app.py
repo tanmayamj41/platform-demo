@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Platform Engineering Demo Running!"
+    return "Platform Engineering Demo Running with different stages!"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
