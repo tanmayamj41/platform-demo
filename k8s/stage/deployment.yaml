@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: platform-demo
-          image: 10mey/platform-demo:ad038589390a78fb2553955262f20000c6609c7c
+          image: 10mey/platform-demo:04f9106511a8ac599060262adbc2606412a7eb03
           ports:
             - containerPort: 5000
           env:
